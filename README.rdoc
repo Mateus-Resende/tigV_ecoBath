@@ -1,28 +1,36 @@
-== README
+== Instalação do projeto
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+* Download github para windows: https://desktop.github.com/
 
-Things you may want to cover:
+* Faça o login no aplicativo usando suas credenciais github
 
-* Ruby version
+* Clone o projeto num diretório de sua preferência
 
-* System dependencies
+* Download ruby para desktop: 
+  - http://dl.bintray.com/oneclick/rubyinstaller/rubyinstaller-2.2.4.exe 
+  - http://dl.bintray.com/oneclick/rubyinstaller/rubyinstaller-2.2.4-x64.exe
 
-* Configuration
+* Abra o prompt de comando <tt>ctrl + r => cmd </tt>
 
-* Database creation
+* Navegue até o diretório onde o projeto foi salvo 
+  - <tt>cd nome_da_pasta </tt> para abrir um diretório
+  - <tt>dir </tt> para mostrar o conteúdo da pasta
+  - <tt>cd ..</tt> para voltar uma pasta no nível de diretório
 
-* Database initialization
+* Instale o gerenciador de bibliotecas <tt>gem install bundler</tt>
 
-* How to run the test suite
+* Instale as dependências <tt>bundle install</tt>
 
-* Services (job queues, cache servers, search engines, etc.)
+* Pronto agora você já pode começar a desenvolver
 
-* Deployment instructions
+== Desenvolvendo utilizando git
 
-* ...
+* Na parte superior do aplicativo do github, clique em "Criar nova branch" e dê um nome intuitivo à mudança que foi feita (perfil_usuario, relatorio_banho, etc)
 
+* Verifique se os arquivos que foram modificados são os que você deseja publicar, a fim de evitar mudanças indesejadas
 
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+* Adicione um comentário sobre o que foi feito e comite suas mudanças para a nova branch
+
+* Envie suas mudanças para que todos tenham acesso a ela com o comando de "Push"
+
+* Pronto, suas mudanças foram atualizadas com sucesso!
