@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Baths</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Amount spent</th>
+      <th>Date</th>
+      <th>Ideal amount</th>
+      <th>Time spent</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @baths.each do |bath| %>
+      <tr>
+        <td><%= bath.amount_spent %></td>
+        <td><%= bath.date %></td>
+        <td><%= bath.ideal_amount %></td>
+        <td><%= bath.time_spent %></td>
+        <td><%= link_to 'Show', bath %></td>
+        <td><%= link_to 'Edit', edit_bath_path(bath) %></td>
+        <td><%= link_to 'Destroy', bath, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Bath', new_bath_path %>

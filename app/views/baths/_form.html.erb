@@ -1,0 +1,33 @@
+<%= form_for(@bath) do |f| %>
+  <% if @bath.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@bath.errors.count, "error") %> prohibited this bath from being saved:</h2>
+
+      <ul>
+      <% @bath.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :amount_spent %><br>
+    <%= f.text_field :amount_spent %>
+  </div>
+  <div class="field">
+    <%= f.label :date %><br>
+    <%= f.date_select :date %>
+  </div>
+  <div class="field">
+    <%= f.label :ideal_amount %><br>
+    <%= f.text_field :ideal_amount %>
+  </div>
+  <div class="field">
+    <%= f.label :time_spent %><br>
+    <%= f.datetime_select :time_spent %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
