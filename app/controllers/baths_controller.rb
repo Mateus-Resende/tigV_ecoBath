@@ -69,6 +69,6 @@ class BathsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def bath_params
-      params.require(:bath).permit(:amount_spent, :date, :ideal_amount, :time_spent)
+      params.require(:bath).permit(:amount_spent, :date, :ideal_amount, :time_spent, :user_id)
     end
 end
