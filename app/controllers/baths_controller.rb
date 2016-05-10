@@ -1,5 +1,6 @@
 class BathsController < ApplicationController
   before_action :set_bath, only: [:show, :edit, :update, :destroy]
+  before_action :set_user
 
   # GET /baths
   # GET /baths.json
@@ -27,8 +28,10 @@ class BathsController < ApplicationController
     @bath = Bath.new(bath_params)
 
     respond_to do |format|
+      @bath.user_id = @user.id
       if @bath.save
-        format.html { redirect_to @bath, notice: 'Bath was successfully created.' }
+        binding.pry
+        format.html { redirect_to user_baths_path, notice: 'Bath was successfully created.' }
         format.json { render :show, status: :created, location: @bath }
       else
         format.html { render :new }
@@ -65,6 +68,10 @@ class BathsController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_bath
       @bath = Bath.find(params[:id])
+    end
+
+    def set_user
+      @user = User.find(params[:user_id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

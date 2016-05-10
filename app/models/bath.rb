@@ -15,7 +15,6 @@ class Bath < ActiveRecord::Base
   after_save :calculate_ideal_amount
 
   def calculate_ideal_amount
-    ideal_amount = ((time_spent.min * 60) + time_spent.seg) * 0.15
-    save!
+    self.ideal_amount = ((time_spent.min * 60) + time_spent.sec) * 0.15
   end
 end

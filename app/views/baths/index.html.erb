@@ -20,14 +20,14 @@
         <td><%= bath.date %></td>
         <td><%= bath.ideal_amount %></td>
         <td><%= bath.time_spent %></td>
-        <td><%= link_to 'Show', bath %></td>
-        <td><%= link_to 'Edit', edit_bath_path(bath) %></td>
-        <td><%= link_to 'Destroy', bath, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Show', user_baths_path(@user.id) %></td>
+        <td><%= link_to 'Edit', edit_user_bath_path(@user.id, bath) %></td>
+
       </tr>
     <% end %>
   </tbody>
 </table>
 
 <br>
-
-<%= link_to 'New Bath', new_bath_path %>
+<%binding.pry%>
+<%= link_to 'New Bath', new_user_bath_path(@user.id) %>

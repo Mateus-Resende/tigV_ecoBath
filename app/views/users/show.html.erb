@@ -25,5 +25,9 @@
   <%= @user.gender %>
 </p>
 
+<p>
+  <%= link_to 'User baths', user_baths_path(@user.id) %>
+</p>
+
 <%= link_to 'Edit', edit_user_path(@user) %> |
 <%= link_to 'Back', users_path %>

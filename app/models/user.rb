@@ -26,6 +26,8 @@ class User < ActiveRecord::Base
   # a data de nascimento não pode ser maior que a data de hoje
   validate :birthdate_less_than_today
 
+  has_many :baths
+
   # a senha é salva encriptada no banco
   has_secure_password
 

@@ -1,9 +1,10 @@
 Rails.application.routes.draw do
 
-  resources :baths
-  root 'home#index'
+  root 'users#index'
 
-  resources :users
+  resources :users do
+    resources :baths
+  end
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
