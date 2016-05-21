@@ -11,4 +11,8 @@
 // about supported directives.
 //
 //= require jquery-2.2.3.min.js
+//= require bootstrap.min.js
+//= require ekko-lightbox-min.js
+//= require wow.min.js
+//= require custom.js
 //= require_tree .

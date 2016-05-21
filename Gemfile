@@ -18,6 +18,13 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # Use ActiveModel has_secure_password
 gem 'bcrypt', '~> 3.1.7'
 
+group :assets do
+  gem 'jquery-datatables-rails', github: 'rweng/jquery-datatables-rails'
+  gem 'jquery-ui-rails'
+end
+
+gem 'will_paginate'
+
 group :development, :test do
   gem 'pry-nav'
   gem 'web-console', '~> 2.0'
