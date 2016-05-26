@@ -1,108 +1,14 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>EcoBath - Seu gerenciador de gastos de &aacute;gua</title>
-  <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <meta name="version" content="<%= VERSION %>">
-  <link href='https://fonts.googleapis.com/css?family=Magra|Open+Sans:400,700' rel='stylesheet' type='text/css' media="all">
-  <link href='https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css' rel='stylesheet' type='text/css' media="all">
-
-  <%= stylesheet_link_tag "application", media: "all" %>
-  <%= javascript_include_tag :application %>
+  <title>EcoBath</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
-  <%= favicon_link_tag 'favicon.ico', type: 'image/png' %>
-  <%= stylesheet_link_tag "http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,100italic,300italic,400italic,700italic,900italic" %>
-
 </head>
 <body>
 
-<div id="menu">
-  <nav class="navbar-wrapper navbar-default" role="navigation">
-    <div class="container">
-        <div class="navbar-header">
-        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-backyard">
-          <span class="sr-only">Toggle navigation</span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
-
-        <a class="navbar-brand site-name" href="#top"><%= link_to image_tag("logo2.png", :alt => "Logo"), root_path, class: "brand", :id => "logo" %></a>
-        </div>
-
-        <div id="navbar-scroll" class="collapse navbar-collapse navbar-backyard navbar-right">
-        <ul class="nav navbar-nav">
-          <li><a href="#intro">About</a></li>
-          <li><a href="#feature">Features</a></li>
-          <li><a href="#subscribe">Subscribe</a></li>
-          <li><a href="#screenshot">Screenshots</a></li>
-          <li><a href="#testi">Reviews</a></li>
-          <li><a href="#download">Download</a></li>
-        </ul>
-        </div>
-    </div>
-  </nav>
-</div>
-
-<div class="fullscreen landing parallax" style="background-image:url('images/bg.jpg'); height: 100%;" data-img-width="2000" data-img-height="1325" data-diff="100">
-
-  <div class="overlay">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-7">
-
-          <!-- /.logo -->
-          <div class="logo wow fadeInDown"><%= link_to image_tag("logo.png", :alt => "Logo"), root_path, class: "brand", :id => "logo" %></a></div>
-          <!-- /.main title -->
-          <h1 class="wow fadeInLeft">
-          Mobile Strategy App
-          </h1>
-
-          <!-- /.header paragraph -->
-          <div class="landing-text wow fadeInLeft">
-            <p>Backyard is a modern and customizable landing page template designed to increase conversion of your product. Backyard is flexible to suit any kind of your business. Try now and join with our happy customers!</p>
-          </div>
-
-          <!-- /.header button -->
-          <div class="head-btn wow fadeInLeft">
-            <a href="#feature" class="btn-primary">Features</a>
-            <a href="#subscribe" class="btn-default">Subscribe</a>
-          </div>
-
-        <!-- /.phone image -->
-        <div class="col-md-5">
-        <% image_tag("header-phone.png", :alt => "phone", class: "header-phone img-responsive wow fadeInRight") %>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
+<%= yield %>
 
 </body>
-
-<footer id="footer">
-  <div class="container">
-    <div class="col-sm-4 col-sm-offset-4">
-      <!-- /.social links -->
-        <div class="social text-center">
-          <ul>
-            <li><a class="wow fadeInUp" href="https://twitter.com/"><i class="fa fa-twitter"></i></a></li>
-            <li><a class="wow fadeInUp" href="https://www.facebook.com/" data-wow-delay="0.2s"><i class="fa fa-facebook"></i></a></li>
-            <li><a class="wow fadeInUp" href="https://plus.google.com/" data-wow-delay="0.4s"><i class="fa fa-google-plus"></i></a></li>
-            <li><a class="wow fadeInUp" href="https://instagram.com/" data-wow-delay="0.6s"><i class="fa fa-instagram"></i></a></li>
-          </ul>
-        </div>
-      <a href="#" class="scrollToTop"><i class="pe-7s-up-arrow pe-va"></i></a>
-    </div>
-  </div>
-</footer>
-
-  <!-- /.javascript files -->
-  <%= javascript_include_tag :application %>
-  <script type="text/javascript">
-  $(document).delegate('*[data-toggle="lightbox"]', 'click', function(event) { event.preventDefault(); $(this).ekkoLightbox(); });
-  </script>
-  <script>
-    new WOW().init();
-  </script>
 </html>

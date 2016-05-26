@@ -1,30 +1,9 @@
 Rails.application.routes.draw do
+  # The priority is based upon order of creation: first created -> highest priority.
+  # See how all your routes lay out with "rake routes".
 
-  root 'application#index'
-
-  # pagina de perfil
-  get '/user/:user_id', to: 'users#index', as: :user
-  # formulario de novos usuarios
-  get '/user/new', to: 'users#new', as: :new_user
-  # criacao de novo usuario no banco
-  post '/user', to: 'users#create', as: :create_new_user
-  # apagar usuario
-  delete '/user/:user_id', to: 'users#destroy', as: :delete_user
-
-  # lista de banhos do usuario
-  get '/user/:user_id/baths', to: 'baths#index', as: :user_baths
-  # criacao de novo banho
-  post '/user/:user_id/baths', to: 'baths#create', as: :create_user_bath
-  # descricao do banho
-  get '/user/:user_id/baths/:bath_id', to: 'baths#show', as: :show_user_bath
-  # apagar banho
-  delete '/user/:user_id/baths/:bath_id', to: 'baths#destroy', as: :destroy_user_bath
-
-
-  # resources :users do
-  #   resources :baths
-  # end
-
+  # You can have the root of your site routed with "root"
+  # root 'welcome#index'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
