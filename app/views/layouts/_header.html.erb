@@ -34,12 +34,15 @@ $(document).delegate('*[data-toggle="lightbox"]', 'click', function(event) { eve
 
       <a class="navbar-brand site-name" href="#top"><%= link_to image_tag("logo2.png", :alt => "Logo"), root_path, class: "brand", :id => "logo" %></a>
       </div>
-      <% if @current_user && @current_user.signed_id? %>
+      <% if logged_in? %>
         <div id="navbar-scroll" class="collapse navbar-collapse navbar-backyard navbar-right">
           <ul class="nav navbar-nav">
-            <li><a href="#intro">Perfil</a></li>
-            <li><a href="#feature">Historico</a></li>
-            <li><a href="#subscribe">Proje&ccedil;&atilde;o</a></li>
+            <li><%= link_to "Início", root_path %></li>
+            <li><%= link_to "Perfil", user_path %></li>
+            <li><a href="#historico">Historico</a></li>
+            <li><a href="#projecao">Proje&ccedil;&atilde;o</a></li>
+            <li class="divider"></li>
+            <li><%= link_to "Sair", logout_path, method: "post" %></li>
           </ul>
         </div>
       <% else %>

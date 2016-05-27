@@ -1,24 +1,20 @@
 <% provide(:title, "Log in") %>
-<h3>Log In</h3>
-<div class="container">
-  <div class="col-md-8 col-md-offset-2 text-center">
 
-    <!-- /.subscribe form -->
-    <div class="subscribe-form wow fadeInUp">
-      <% form_for(:session, url: login_path) do |f| %>
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <h1>Log in</h1>
 
-        <%= f.label :email %>
-        <%= f.email_field :email, class: 'form-control', placeholder: 'Digite seu email...' %>
+    <%= form_for(:session, url: login_path) do |f| %>
 
-        <%= f.label :password %>
-        <%= f.password_field :password, class: 'form-control', name: 'MERGE0' %>
-        <%= f.submit "Log in", class: 'btn btn-primary' %>
-        <input class="form-control" type="email" name="MERGE0" placeholder="Your email..." required="">
-        <button type="submit" class="subscribe-btn btn">SUBSCRIBE</button>
-      <% end %>
+      <%= f.label :email %>
+      <%= f.email_field :email, class: 'form-control' %>
 
-      <p>Ainda não possui uma conta? <%= link_to "Sign up now!", signup_path %></p>
-    </div>
+      <%= f.label :password %>
+      <%= f.password_field :password, class: 'form-control' %>
+
+      <%= f.submit "Log in", class: "btn btn-primary" %>
+    <% end %>
+
+    <p>Ainda não possui uma conta? <%= link_to "Cadastre-se!", signup_path %></p>
   </div>
 </div>
-
