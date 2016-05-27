@@ -1,0 +1,32 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-7">
+
+      <!-- /.logo -->
+      <div class="logo wow fadeInDown"><%= link_to image_tag("logo.png", :alt => "Logo"), root_path, class: "brand", :id => "logo" %></div>
+      <!-- /.main title -->
+      <h1 class="wow fadeInLeft">
+      Ecobath App
+      </h1>
+
+      <!-- /.header paragraph -->
+      <div class="landing-text wow fadeInLeft">
+        <p>Ecobath é um aplicativo de controle de gastos de água durante o banho. Você pode consultar seu histórico e ver projeções de como está indo,
+        ajude-nos a economizar esse bem tão precioso!</p>
+      </div>
+
+      <!-- /.header button -->
+      <div class="head-btn wow fadeInLeft">
+        <%= link_to 'Login', new_user_path, class: "btn-primary" %>
+        <%= link_to 'Cadastro', new_user_path, class: "btn-primary" %>
+      </div>
+
+      <!-- /.phone image -->
+      <div class="col-md-5">
+        <% image_tag("header-phone.png", :alt => "phone", class: "header-phone img-responsive wow fadeInRight") %>
+      </div>
+    </div>
+  </div>
+</div>
+
+

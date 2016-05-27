@@ -1,14 +1,17 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>EcoBath</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
-</head>
 <body>
-
-<%= yield %>
-
+  <%= render 'layouts/header' %>
+  <div class="fullscreen landing" style="background-image: url(http://localhost:3000/water.jpg); height: 100%; width: 100%;" data-img-width="2000" data-img-height="1325" data-diff="400">
+    <div class="overlay">
+      <div class="container">
+        <% flash.each do |message_type, message| %>
+          <div class="alert alert-<%= message_type %>"><%= message %></div>
+        <% end %>
+        <%= yield %>
+      </div>
+    </div>
+  </div>
+  <%= render 'layouts/footer' %>
 </body>
 </html>

@@ -1,0 +1,18 @@
+<% provide(:title, 'Sign up') %>
+
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <%= form_for(@user) do |f| %>
+      <%= render 'shared/error_messages' %>
+      <%= f.text_field :first_name, class: "form-control", placeholder: 'Digite seu primeiro nome' %>
+      <%= f.text_field :last_name, class: "form-control", placeholder: 'Digite seu ultimo nome' %>
+      <%= f.email_field :email, class: "form-control", placeholder: 'Digite seu email' %>
+      <%= f.text_field :gender, class: "form-control", placeholder: 'Digite seu sexo' %>
+      <%= f.date_select :birthdate, order: [:day, :month, :year], start_year: 1916, end_year: 2016, with_css_class: true, style: "height: 34px;width: 30%;background: white;border-radius: 4px 0 0 4px;display: inline;" %>
+      <%= f.password_field :password, class: "form-control", placeholder: 'Digite sua senha' %>
+      <%= f.password_field :password_confirmation, class: "form-control", placeholder: 'Repita sua senha' %>
+
+      <%= f.submit "Create my account", class: "btn btn-primary" %>
+    <% end %>
+  </div>
+</div>
