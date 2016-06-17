@@ -1,0 +1,28 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Histórico de banhos</h1>
+
+<table id="baths" class="display" data-source="<%= user_baths_path(format: 'json')%>">
+  <thead>
+    <tr>
+      <th>Data</th>
+      <th>Quantidade gasta</th>
+      <th>Tempo gasto</th>
+      <th>Quantidade ideal</th>
+    </tr>
+  </thead>
+
+  <tbody>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Enviar banhos', new_user_bath_path %>
+<%= javascript_include_tag 'https://cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js' %>
+<%= stylesheet_link_tag "https://cdn.datatables.net/1.10.12/css/jquery.dataTables.min.css" %>
+<script type="text/javascript">
+  $(document).ready(function() {
+    initializeBathsDatatable("baths", function() {}, null);
+  });
+</script>

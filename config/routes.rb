@@ -5,7 +5,9 @@ Rails.application.routes.draw do
   post 'login', to: 'sessions#create', as: :create_session
   get 'logout', to: 'sessions#destroy', as: :logout
   get 'signup', to: 'users#new'
-  resources :users
+  resources :users do
+    resources :baths
+  end
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
