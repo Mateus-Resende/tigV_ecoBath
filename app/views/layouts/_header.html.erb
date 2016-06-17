@@ -32,16 +32,13 @@ $(document).delegate('*[data-toggle="lightbox"]', 'click', function(event) { eve
         <span class="icon-bar"></span>
       </button>
 
-      <a class="navbar-brand site-name" href="#top"><%= link_to image_tag("logo2.png", :alt => "Logo", style: "width: 170px; height: 87px;"), root_path, class: "brand", :id => "logo" %></a>
+      <a class="navbar-brand site-name" href="#top"><%= link_to image_tag("logo2.png", :alt => "Logo", style: "width: 170px; height: 87px;"), @current_user.nil? ? root_path : user_path(@current_user.id), class: "brand", :id => "logo" %></a>
       </div>
       <% if logged_in? %>
         <div id="navbar-scroll" class="collapse navbar-collapse navbar-backyard navbar-right text-center">
-          <ul class="nav navbar-nav">
-            <li><%= link_to "Início", root_path %></li>
+          <ul class="nav navbar-nav" style="margin: 7.5px -15px; font-size: 1.2em;">
             <li><%= link_to "Perfil", user_path(@current_user.id) %></li>
-            <li><%= link_to "Banhos", user_baths_path(@current_user.id) %></li>
-            <li><a href="#historico">Historico</a></li>
-            <li><a href="#projecao">Proje&ccedil;&atilde;o</a></li>
+            <li><%= link_to "Histórico", user_baths_path(@current_user.id) %></li>
             <li class="divider"></li>
             <li><%= link_to "Sair", logout_path, method: "post" %></li>
           </ul>

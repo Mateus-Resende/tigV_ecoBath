@@ -3,7 +3,7 @@
     <div class="col-md-7">
 
       <!-- /.logo -->
-      <div class="logo wow fadeInDown"><%= link_to image_tag("logo.png", alt: "Logo", style: "width:550px;height:130px;"), root_path, class: "brand", id: "logo" %></div>
+      <div class="logo wow fadeInDown"><%= link_to image_tag("logo.png", alt: "Logo", style: "width: 550px; height: 130px;"), @current_user.nil? ? root_path : user_path(@current_user.id), class: "brand", id: "logo" %></div>
 
       <!-- /.header paragraph -->
       <div class="landing-text wow fadeInLeft">
@@ -13,8 +13,12 @@
 
       <!-- /.header button -->
       <div class="head-btn wow fadeInLeft">
-        <%= link_to 'Login', login_path, class: "btn-primary" %>
-        <%= link_to 'Cadastro', new_user_path, class: "btn-primary" %>
+        <% if @current_user %>
+          <%= link_to 'Perfil', user_path(@current_user.id), class: "btn-primary" %>
+        <% else %>
+          <%= link_to 'Login', login_path, class: "btn-primary" %>
+          <%= link_to 'Cadastro', new_user_path, class: "btn-primary" %>
+        <% end %>
       </div>
 
       <!-- /.phone image -->
