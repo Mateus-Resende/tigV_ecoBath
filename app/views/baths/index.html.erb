@@ -5,10 +5,10 @@
 <table id="baths" class="display" data-source="<%= user_baths_path(format: 'json')%>">
   <thead>
     <tr>
-      <th>Data</th>
-      <th>Quantidade gasta</th>
-      <th>Tempo gasto</th>
-      <th>Quantidade ideal</th>
+      <th class="table-header">Data</th>
+      <th class="table-header">Quantidade gasta</th>
+      <th class="table-header">Tempo gasto</th>
+      <th class="table-header">Quantidade ideal</th>
     </tr>
   </thead>
 
@@ -16,13 +16,24 @@
   </tbody>
 </table>
 
+<div id="legend">
+  <span id="severe" class="legend">w</span><span class="legend-description">Crítico</span>
+  <span id="warning" class="legend">w</span><span class="legend-description">Atenção</span>
+  <span id="fine" class="legend">w</span><span class="legend-description">Ok</span>
+  <span id="finer" class="legend">w</span><span class="legend-description">Bom</span>
+  <span id="finest" class="legend">w</span><span class="legend-description">Ótimo</span>
+</div>
 <br>
+<div id="new-bath-link">
+  <%= link_to 'Enviar banhos',new_user_bath_path,  { class: "btn-default", style: "text-decoration: none;" } %>
+<div>
 
-<%= link_to 'Enviar banhos', new_user_bath_path %>
 <%= javascript_include_tag 'https://cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js' %>
 <%= stylesheet_link_tag "https://cdn.datatables.net/1.10.12/css/jquery.dataTables.min.css" %>
 <script type="text/javascript">
   $(document).ready(function() {
-    initializeBathsDatatable("baths", function() {}, null);
+    initializeBathsDatatable("baths", updateDataTables, null);
   });
+
+
 </script>

@@ -22,7 +22,7 @@ class BathsDatatable
       [
         bath.date,
         bath.amount_spent,
-        bath.time_spent,
+        Time.at(bath.time_spent).utc.strftime("%H:%M:%S"),
         bath.ideal_amount
       ]
     end

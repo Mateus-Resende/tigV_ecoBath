@@ -1,17 +1,6 @@
 <%= form_tag(user_baths_path(@user.id), multipart: true, method: "post") do |f| %>
-  <% if @bath.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@bath.errors.count, "error") %> prohibited this bath from being saved:</h2>
 
-      <ul>
-      <% @bath.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-  <%= file_field_tag 'Banhos' %>
+  <label for="file">File to Upload</label><%= file_field_tag 'Banhos' %>
 
   <%= submit_tag 'enviar'%>
 <% end %>

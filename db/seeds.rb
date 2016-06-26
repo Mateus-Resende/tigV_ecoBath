@@ -5,3 +5,8 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+
+Bath.where(user_id: 2).each do |b|
+  b.update(amount_spent: b.amount_spent * 0.8)
+end
