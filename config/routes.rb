@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   get 'logout', to: 'sessions#destroy', as: :logout
   get 'signup', to: 'users#new'
   resources :users do
+    get 'stats', to: 'users#stats', as: :stats
     resources :baths
   end
 
